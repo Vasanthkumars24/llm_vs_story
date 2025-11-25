@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Department Distribution</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <h2 style="font-family: Arial; text-align: center;">
+        Employee Department Distribution (Histogram)
+    </h2>
+
+    <!-- Container for Plotly Chart -->
+    <div id="dept_histogram" style="width: 90%; margin: auto; height: 600px;"></div>
+
+    <script>
+        // Department counts generated from the synthetic dataset
+        // You can adjust these values if needed
+        const departments = ["Sales", "Marketing", "Operations", "R&D", "IT", "HR", "Finance"];
+        const counts = [18, 15, 17, 12, 16, 10, 12];
+
+        const data = [{
+            x: departments,
+            y: counts,
+            type: "bar",
+            text: counts,
+            textposition: "outside",
+            marker: {
+                color: "#4C72B0"
+            }
+        }];
+
+        const layout = {
+            title: "Department Distribution (Employee Count)",
+            xaxis: { title: "Department" },
+            yaxis: { title: "Number of Employees" },
+            margin: { t: 80, l: 60, r: 30, b: 80 },
+            paper_bgcolor: "white",
+            plot_bgcolor: "white"
+        };
+
+        Plotly.newPlot("dept_histogram", data, layout);
+    </script>
+
+    <!-- Verification email as required -->
+    <footer style="margin-top: 50px; text-align: center; font-family: Arial; font-size: 14px;">
+        <p>Created by ChatGPT • Verification Email: <b>22f3001685@ds.study.iitm.ac.in</b></p>
+    </footer>
+
+</body>
+</html>
